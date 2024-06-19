@@ -6,5 +6,18 @@ WITH (
     Firstrow  =2
     )
 
+--Average and Max Satisfaction Point
+select avg(EnvironmentSatisfaction) Avg , max(EnvironmentSatisfaction) Max
+    from Employee_Data
+
+/*Number of employees with environment satisafction point 
+below average. I applied a subquery here instead of the Actual Value 
+to allow for automatic refresh of result if data changes */
+
+select count(EnvironmentSatisfaction) as EnvSat_BelowAvg
+from Employee_Data
+where EnvironmentSatisfaction < 
+    (select AVG(EnvironmentSatisfaction)
+    from Employee_Data)
 
 
