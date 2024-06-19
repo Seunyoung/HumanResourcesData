@@ -1,0 +1,9 @@
+--importing CSV file with Bulk Insert
+
+Bulk INSERT dbo.Employee_Data
+from '/Employee-Attrition.csv'
+with 
+(
+    FORMAT ='CSV',
+    firstrow=2
+)
