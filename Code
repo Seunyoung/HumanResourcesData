@@ -20,4 +20,10 @@ where EnvironmentSatisfaction <
     (select AVG(EnvironmentSatisfaction)
     from Employee_Data)
 
+--- No of Employees Working overtime split by Gender (Note Keep it simple)
+select Gender, OverTime, count(overtime) as EmployeesOverTime
+from Employee_Data
+group by OverTime, gender
+
+
 
